@@ -1,12 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+  <title>LEOPC Apps Download</title>
+  <style>
+    body { font-family: Arial; margin: 20px; background: #f4f4f4; }
+    header { display: flex; justify-content: space-between; align-items: center; background: #333; color: #fff; padding: 10px; }
+    nav a { color: white; margin: 0 10px; text-decoration: none; }
+    .login-bar input { padding: 5px; margin-right: 5px; }
+    h2 { margin-top: 2em; }
+    .category { margin-top: 2em; }
+    .app { background: #fff; margin: 15px 0; padding: 15px; border-radius: 5px; }
+    .download-btn { background: #4CAF50; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 3px; }
+    .download-btn:disabled { background: #aaa; cursor: not-allowed; }
+    .meta { font-size: 0.95em; color: #666; margin-bottom: 8px; }
+    .plans, .help { background: #fff; padding: 15px; margin-top: 20px; border-radius: 5px; }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My GitHub Pages Site</h1>
-    <p>This is a basic HTML template for deployment on GitHub Pages.</p>
+  <header>
+    <h1>PC Apps Download</h1>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="#plans">Premium Plans</a>
+      <a href="#help">Help</a>
+    </nav>
+    <div class="login-bar">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+      <button onclick="signup()">Join</button>
+    </div>
+  </header>
+  <section id="apps">
+    <h2>Available Apps</h2>
+
+    <!-- Productivity & Office -->
+    <div class="category"><h2>Productivity & Office</h2></div>
+    <div class="app"><h3>Microsoft 365</h3><p class="meta">Paid · English</p><p>Word, Excel, PowerPoint, Outlook, OneNote, Teams, and 1TB OneDrive storage for productivity boost.</p><button class="download-btn" onclick="downloadApp('Microsoft 365', true)">Download</button></div>
+    <div class="app"><h3>LibreOffice</h3><p class="meta">Free · English</p><p>A powerful and free alternative Microsoft Office suite.</p><button class="download-btn" onclick="downloadApp('LibreOffice', false)">Download</button></div>
+    <div class="app"><h3>WPS Office</h3><p class="meta">Free · English</p><p>Lightweight office suite with PDF tools.</p><button class="download-btn" onclick="downloadApp('WPS Office', false)">Download</button></div>
+    <div class="app"><h3>Notion</h3><p class="meta">Free · English</p><p>All-in-one workspace for notes, tasks, and project management.</p><button class="download-btn" onclick="downloadApp('Notion', false)">Download</button></div>
+    <div class="app"><h3>Evernote</h3><p class="meta">Free · English</p><p>Robust note-taking and organization app with cloud sync.</p><button class="download-btn" onclick="downloadApp('Evernote', false)">Download</button></div>
+    <div class="app"><h3>Google Drive</h3><p class="meta">Free · English</p><p>Cloud storage and document collaboration.</p><button class="download-btn" onclick="downloadApp('Google Drive', false)">Download</button></div>
+    <div class="app"><h3>Todoist</h3><p class="meta">Free · English</p><p>Popular task and project manager.</p><button class="download-btn" onclick="downloadApp('Todoist', false)">Download</button></div>
+    <div class="app"><h3>Trello</h3><p class="meta">Free · English</p><p>Visual project management with boards and cards.</p><button class="download-btn" onclick="downloadApp('Trello', false)">Download</button></div>
+    <div class="app"><h3>Foxit PDF Reader</h3><p class="meta">Free · English</p><p>Fast, feature-rich PDF viewing.</p><button class="download-btn" onclick="downloadApp('Foxit PDF Reader', false)">Download</button></div>
+    <div class="app"><h3>Wox</h3><p class="meta">Free · English</p><p>Spotlight-style launcher for Windows.</p><button class="download-btn" onclick="downloadApp('Wox', false)">Download</button></div>
+    <div class="app"><h3>Grammarly</h3><p class="meta">Free · English</p><p>Real-time grammar and spelling checker for your writing.</p><button class="download-btn" onclick="downloadApp('Grammarly', false)">Download</button></div>
+    <div class="app"><h3>RescueTime</h3><p class="meta">Free · English</p><p>Automatic time tracking and productivity analytics.</p><button class="download-btn" onclick="downloadApp('RescueTime', false)">Download</button></div>
+    <div class="app"><h3>Rainlendar</h3><p class="meta">Free · English</p><p>Customizable desktop calendar for task and event reminders.</p><button class="download-btn" onclick="downloadApp('Rainlendar', false)">Download</button></div>
+    <div class="app"><h3>Google Keep</h3><p class="meta">Free · English</p><p>Lightweight note-keeping and checklist tool.</p><button class="download-btn" onclick="downloadApp('Google Keep', false)">Download</button></div>
+    <div class="app"><h3>Sticky Notes</h3><p class="meta">Free · English</p><p>Quick notes directly on your desktop.</p><button class="download-btn" onclick="downloadApp('Sticky Notes', false)">Download</button></div>
+
+    <!-- Browsing & Communication -->
+    <div class="category"><h2>Browsing & Communication</h2></div>
+    <div class="app"><h3>Thunderbird</h3><p class="meta">Free · English</p><p>Open-source, feature-rich email client.</p><button class="download-btn" onclick="downloadApp('Thunderbird', false)">Download</button></div>
+    <div class="app"><h3>Slack</h3><p class="meta">Free · English</p><p>Team communication and collaboration platform.</p><button class="download-btn" onclick="downloadApp('Slack', false)">Download</button></div>
+    <div class="app"><h3>Discord</h3><p class="meta">Free · English</p><p>Community and team chat via voice, video, and text.</p><button class="download-btn" onclick="downloadApp('Discord', false)">Download</button></div>
+    <div class="app"><h3>Rambox</h3><p class="meta">Free · English</p><p>Unified workspace for messaging and email apps.</p><button class="download-btn" onclick="downloadApp('Rambox', false)">Download</button></div>
+    <div class="app"><h3>Zoom</h3><p class="meta">Free · English</p><p>Leading video conferencing tool.</p><button class="download-btn" onclick="downloadApp('Zoom', false)">Download</button></div>
+    <div class="app"><h3>Franz</h3><p class="meta">Free · English</p><p>Messaging aggregator for multiple platforms (Messenger, WhatsApp, etc.).</p><button class="download-btn" onclick="downloadApp('Franz', false)">Download</button></div>
+    <div class="app"><h3>Signal</h3><p class="meta">Free · English</p><p>Secure encrypted messaging for privacy-conscious users.</p><button class="download-btn" onclick="downloadApp('Signal', false)">Download</button></div>
+    <div class="app"><h3>FileZilla</h3><p class="meta">Free · English</p><p>FTP client for file transfers.</p><button class="download-btn" onclick="downloadApp('FileZilla', false)">Download</button></div>
+    <div class="app"><h3>Google Chrome</h3><p class="meta">Free · English</p><p>Fast, secure, and widely used web browser.</p><button class="download-btn" onclick="downloadApp('Google Chrome', false)">Download</button></div>
+    <div class="app"><h3>Mozilla Firefox</h3><p class="meta">Free · English</p><p>Privacy-focused, customizable browser.</p><button class="download-btn" onclick="downloadApp('Mozilla Firefox', false)">Download</button></div>
+    <div class="app"><h3>Microsoft Edge</h3><p class="meta">Free · English</p><p>Modern browser with built-in productivity features.</p><button class="download-btn" onclick="downloadApp('Microsoft Edge', false)">Download</button></div>
+
+    <!-- Utilities & System Tools -->
+    <div class="category"><h2>Utilities & System Tools</h2></div>
+    <div class="app"><h3>CCleaner</h3><p class="meta">Free · English</p><p>Clean up junk files and optimize system performance.</p><button class="download-btn" onclick="downloadApp('CCleaner', false)">Download</button></div>
+    <div class="app"><h3>Everything</h3><p class="meta">Free · English</p><p>Instant file and folder search utility.</p><button class="download-btn" onclick="downloadApp('Everything', false)">Download</button></div>
+    <div class="app"><h3>7-Zip</h3><p class="meta">Free · English</p><p>Lightweight, versatile file archiver and extractor.</p><button class="download-btn" onclick="downloadApp('7-Zip', false)">Download</button></div>
+    <div class="app"><h3>WinRAR</h3><p class="meta">Paid · English</p><p>Popular archive manager supporting many formats.</p><button class="download-btn" onclick="downloadApp('WinRAR', true)">Download</button></div>
+    <div class="app"><h3>Process Explorer</h3><p class="meta">Free · English</p><p>Advanced system monitoring from Microsoft Sysinternals.</p><button class="download-btn" onclick="downloadApp('Process Explorer', false)">Download</button></div>
+    <div class="app"><h3>Speccy</h3><p class="meta">Free · English</p><p>System information tool for hardware details.</p><button class="download-btn" onclick="downloadApp('Speccy', false)">Download</button></div>
+    <div class="app"><h3>Recuva</h3><p class="meta">Free · English</p><p>Recover accidentally deleted files.</p><button class="download-btn" onclick="downloadApp('Recuva', false)">Download</button></div>
+    <div class="app"><h3>Macrium Reflect</h3><p class="meta">Free · English</p><p>Reliable disk imaging and backup solution.</p><button class="download-btn" onclick="downloadApp('Macrium Reflect', false)">Download</button></div>
+    <div class="app"><h3>Rufus</h3><p class="meta">Free · English</p><p>Tool for creating bootable USB drives.</p><button class="download-btn" onclick="downloadApp('Rufus', false)">Download</button></div>
+    <div class="app"><h3>Snappy Driver Installer</h3><p class="meta">Free · English</p><p>Free driver updater for Windows.</p><button class="download-btn" onclick="downloadApp('Snappy Driver Installer', false)">Download</button></div>
+    <div class="app"><h3>CrystalDiskInfo</h3><p class="meta">Free · English</p><p>Monitor hard drive health and S.M.A.R.T. data.</p><button class="download-btn" onclick="downloadApp('CrystalDiskInfo', false)">Download</button></div>
+    <div class="app"><h3>Defraggler</h3><p class="meta">Free · English</p><p>Disk defragmentation for traditional hard drives.</p><button class="download-btn" onclick="downloadApp('Defraggler', false)">Download</button></div>
+    <div class="app"><h3>TreeSize Free</h3><p class="meta">Free · English</p><p>Visualize disk space usage and find large files.</p><button class="download-btn" onclick="downloadApp('TreeSize Free', false)">Download</button></div>
+    <div class="app"><h3>Autoruns</h3><p class="meta">Free · English</p><p>Manage startup processes and system autoloaders.</p><button class="download-btn" onclick="downloadApp('Autoruns', false)">Download</button></div>
+    <div class="app"><h3>PowerToys</h3><p class="meta">Free · English</p><p>Suite of utilities to supercharge productivity on Windows.</p><button class="download-btn" onclick="downloadApp('PowerToys', false)">Download</button></div>
+
+    <!-- Security & Privacy -->
+    <div class="category"><h2>Security & Privacy</h2></div>
+    <div class="app"><h3>Bitdefender Antivirus Free</h3><p class="meta">Free · English</p><p>Excellent free virus protection.</p><button class="download-btn" onclick="downloadApp('Bitdefender Antivirus Free', false)">Download</button></div>
+    <div class="app"><h3>Malwarebytes</h3><p class="meta">Free · English</p><p>On-demand malware and spyware scanner.</p><button class="download-btn" onclick="downloadApp('Malwarebytes', false)">Download</button></div>
+    <div class="app"><h3>Windows Security (Defender)</h3><p class="meta">Free · English</p><p>Built-in, constantly updated antivirus.</p><button class="download-btn" onclick="downloadApp('Windows Security', false)">Download</button></div>
+    <div class="app"><h3>GlassWire</h3><p class="meta">Free · English</p><p>Network monitor with firewall controls.</p><button class="download-btn" onclick="downloadApp('GlassWire', false)">Download</button></div>
+    <div class="app"><h3>KeePass</h3><p class="meta">Free · English</p><p>Open-source password manager.</p><button class="download-btn" onclick="downloadApp('KeePass', false)">Download</button></div>
+    <div class="app"><h3>LastPass</h3><p class="meta">Free · English</p><p>Cloud-based password management.</p><button class="download-btn" onclick="downloadApp('LastPass', false)">Download</button></div>
+    <div class="app"><h3>VeraCrypt</h3><p class="meta">Free · English</p><p>Disk encryption for secure storage.</p><button class="download-btn" onclick="downloadApp('VeraCrypt', false)">Download</button></div>
+    <div class="app"><h3>NordVPN</h3><p class="meta">Paid · English</p><p>Reliable VPN service for privacy and security.</p><button class="download-btn" onclick="downloadApp('NordVPN', true)">Download</button></div>
+
+    <!-- Media & Entertainment -->
+    <div class="category"><h2>Media & Entertainment</h2></div>
+    <div class="app"><h3>VLC Media Player</h3><p class="meta">Free · English</p><p>Versatile media player for almost any format.</p><button class="download-btn" onclick="downloadApp('VLC Media Player', false)">Download</button></div>
+    <div class="app"><h3>Spotify</h3><p class="meta">Free · English</p><p>Popular streaming music service with a desktop app.</p><button class="download-btn" onclick="downloadApp('Spotify', false)">Download</button></div>
+    <div class="app"><h3>iTunes</h3><p class="meta">Free · English</p><p>Music and media library management.</p><button class="download-btn" onclick="downloadApp('iTunes', false)">Download</button></div>
+    <div class="app"><h3>MusicBee</h3><p class="meta">Free · English</p><p>Feature-rich music player for local libraries.</p><button class="download-btn" onclick="downloadApp('MusicBee', false)">Download</button></div>
+    <div class="app"><h3>Plex</h3><p class="meta">Free · English</p><p>Media server to stream content to all your devices.</p><button class="download-btn" onclick="downloadApp('Plex', false)">Download</button></div>
+    <div class="app"><h3>PotPlayer</h3><p class="meta">Free · English</p><p>Lightweight, customizable media player.</p><button class="download-btn" onclick="downloadApp('PotPlayer', false)">Download</button></div>
+    <div class="app"><h3>Kodi</h3><p class="meta">Free · English</p><p>Powerful home theater software for local and streaming media.</p><button class="download-btn" onclick="downloadApp('Kodi', false)">Download</button></div>
+    <div class="app"><h3>Audacity</h3><p class="meta">Free · English</p><p>Free, open-source audio editor and recorder.</p><button class="download-btn" onclick="downloadApp('Audacity', false)">Download</button></div>
+    <div class="app"><h3>HandBrake</h3><p class="meta">Free · English</p><p>Video transcoder for converting video files.</p><button class="download-btn" onclick="downloadApp('HandBrake', false)">Download</button></div>
+    <div class="app"><h3>OBS Studio</h3><p class="meta">Free · English</p><p>Screen recording and live streaming platform.</p><button class="download-btn" onclick="downloadApp('OBS Studio', false)">Download</button></div>
+    <div class="app"><h3>ShareX</h3><p class="meta">Free · English</p><p>Advanced screenshot and screen capture tool.</p><button class="download-btn" onclick="downloadApp('ShareX', false)">Download</button></div>
+    <div class="app"><h3>GOM Player</h3><p class="meta">Free · English</p><p>Feature-packed media player with subtitle support.</p><button class="download-btn" onclick="downloadApp('GOM Player', false)">Download</button></div>
+    <div class="app"><h3>Netflix</h3><p class="meta">Paid · English</p><p>Streaming app for movies and TV.</p><button class="download-btn" onclick="downloadApp('Netflix', true)">Download</button></div>
+
+    <!-- Creativity & Design -->
+    <div class="category"><h2>Creativity & Design</h2></div>
+    <div class="app"><h3>Adobe Photoshop</h3><p class="meta">Paid · English</p><p>Industry-standard image editing software.</p><button class="download-btn" onclick="downloadApp('Adobe Photoshop', true)">Download</button></div>
+    <div class="app"><h3>GIMP</h3><p class="meta">Free · English</p><p>Free and open-source image editor with advanced features.</p><button class="download-btn" onclick="downloadApp('GIMP', false)">Download</button></div>
+    <div class="app"><h3>Paint.NET</h3><p class="meta">Free · English</p><p>Lightweight yet powerful photo and graphics editor.</p><button class="download-btn" onclick="downloadApp('Paint.NET', false)">Download</button></div>
+    <div class="app"><h3>Inkscape</h3><p class="meta">Free · English</p><p>Vector graphics editor, great for SVGs and illustration.</p><button class="download-btn" onclick="downloadApp('Inkscape', false)">Download</button></div>
+    <div class="app"><h3>Blender</h3><p class="meta">Free · English</p><p>3D modeling, animation, and rendering suite.</p><button class="download-btn" onclick="downloadApp('Blender', false)">Download</button></div>
+    <div class="app"><h3>Krita</h3><p class="meta">Free · English</p><p>Advanced painting program for digital artists.</p><button class="download-btn" onclick="downloadApp('Krita', false)">Download</button></div>
+    <div class="app"><h3>DaVinci Resolve</h3><p class="meta">Free · English</p><p>Professional-grade video editing software.</p><button class="download-btn" onclick="downloadApp('DaVinci Resolve', false)">Download</button></div>
+    <div class="app"><h3>Affinity Photo</h3><p class="meta">Paid · English</p><p>High-performance photo editing alternative.</p><button class="download-btn" onclick="downloadApp('Affinity Photo', true)">Download</button></div>
+    <div class="app"><h3>PDFsam Basic</h3><p class="meta">Free · English</p><p>Free tool for splitting and merging PDFs.</p><button class="download-btn" onclick="downloadApp('PDFsam Basic', false)">Download</button></div>
+    <div class="app"><h3>Canva</h3><p class="meta">Free · English</p><p>Easy-to-use graphic design tool (web-based with desktop support).</p><button class="download-btn" onclick="downloadApp('Canva', false)">Download</button></div>
+
+    <!-- Development & Coding -->
+    <div class="category"><h2>Development & Coding</h2></div>
+    <div class="app"><h3>Notepad++</h3><p class="meta">Free · English</p><p>Lightweight, tabbed text and code editor.</p><button class="download-btn" onclick="downloadApp('Notepad++', false)">Download</button></div>
+    <div class="app"><h3>Git</h3><p class="meta">Free · English</p><p>Version control system for collaborative coding.</p><button class="download-btn" onclick="downloadApp('Git', false)">Download</button></div>
+    <div class="app"><h3>GitHub Desktop</h3><p class="meta">Free · English</p><p>Simplified GitHub repository management.</p><button class="download-btn" onclick="downloadApp('GitHub Desktop', false)">Download</button></div>
+    <div class="app"><h3>Sublime Text</h3><p class="meta">Paid · English</p><p>Popular text editor with a distraction-free interface.</p><button class="download-btn" onclick="downloadApp('Sublime Text', true)">Download</button></div>
+    <div class="app"><h3>XAMPP</h3><p class="meta">Free · English</p><p>Easy-to-install Apache, MySQL, PHP, and Perl stack.</p><button class="download-btn" onclick="downloadApp('XAMPP', false)">Download</button></div>
+    <div class="app"><h3>Postman</h3><p class="meta">Free · English</p><p>API development and testing environment.</p><button class="download-btn" onclick="downloadApp('Postman', false)">Download</button></div>
+    <div class="app"><h3>Docker Desktop</h3><p class="meta">Free · English</p><p>Containerization for developers and sysadmins.</p><button class="download-btn" onclick="downloadApp('Docker Desktop', false)">Download</button></div>
+    <div class="app"><h3>PuTTY</h3><p class="meta">Free · English</p><p>SSH and Telnet client for remote connections.</p><button class="download-btn" onclick="downloadApp('PuTTY', false)">Download</button></div>
+    <div class="app"><h3>WinSCP</h3><p class="meta">Free · English</p><p>SFTP, FTP, and SCP client for secure file transfers.</p><button class="download-btn" onclick="downloadApp('WinSCP', false)">Download</button></div>
+    <div class="app"><h3>Visual Studio Code</h3><p class="meta">Free · English</p><p>Powerful and extensible code editor.</p><button class="download-btn" onclick="downloadApp('Visual Studio Code', false)">Download</button></div>
+
+    <!-- File Management -->
+    <div class="category"><h2>File Management</h2></div>
+    <div class="app"><h3>Total Commander</h3><p class="meta">Paid · English</p><p>Dual-pane file manager with advanced features.</p><button class="download-btn" onclick="downloadApp('Total Commander', true)">Download</button></div>
+    <div class="app"><h3>FreeCommander</h3><p class="meta">Free · English</p><p>Easy-to-use file management alternative.</p><button class="download-btn" onclick="downloadApp('FreeCommander', false)">Download</button></div>
+    <div class="app"><h3>Directory Opus</h3><p class="meta">Paid · English</p><p>Highly configurable file explorer replacement.</p><button class="download-btn" onclick="downloadApp('Directory Opus', true)">Download</button></div>
+    <div class="app"><h3>FastCopy</h3><p class="meta">Free · English</p><p>High-speed file copy utility.</p><button class="download-btn" onclick="downloadApp('FastCopy', false)">Download</button></div>
+    <div class="app"><h3>SyncBackFree</h3><p class="meta">Free · English</p><p>Flexible file backup and synchronization.</p><button class="download-btn" onclick="downloadApp('SyncBackFree', false)">Download</button></div>
+    <div class="app"><h3>WinDirStat</h3><p class="meta">Free · English</p><p>Disk usage statistics viewer and cleanup tool.</p><button class="download-btn" onclick="downloadApp('WinDirStat', false)">Download</button></div>
+    <div class="app"><h3>Q-Dir</h3><p class="meta">Free · English</p><p>Quad-pane file management for power users.</p><button class="download-btn" onclick="downloadApp('Q-Dir', false)">Download</button></div>
+    <div class="app"><h3>TeraCopy</h3><p class="meta">Free · English</p><p>Accelerate and verify file transfers.</p><button class="download-btn" onclick="downloadApp('TeraCopy', false)">Download</button></div>
+
+    <!-- Cloud & Backup -->
+    <div class="category"><h2>Cloud & Backup</h2></div>
+    <div class="app"><h3>Dropbox</h3><p class="meta">Free · English</p><p>Seamless file syncing and sharing service.</p><button class="download-btn" onclick="downloadApp('Dropbox', false)">Download</button></div>
+    <div class="app"><h3>Google Backup and Sync</h3><p class="meta">Free · English</p><p>Google’s tool for cloud backup.</p><button class="download-btn" onclick="downloadApp('Google Backup and Sync', false)">Download</button></div>
+    <div class="app"><h3>pCloud</h3><p class="meta">Free · English</p><p>Secure, user-friendly cloud storage.</p><button class="download-btn" onclick="downloadApp('pCloud', false)">Download</button></div>
+    <div class="app"><h3>MEGA</h3><p class="meta">Free · English</p><p>Encrypted cloud storage with generous free tier.</p><button class="download-btn" onclick="downloadApp('MEGA', false)">Download</button></div>
+    <div class="app"><h3>Sync.com</h3><p class="meta">Free · English</p><p>Privacy-focused cloud storage and sharing.</p><button class="download-btn" onclick="downloadApp('Sync.com', false)">Download</button></div>
+    <div class="app"><h3>OneDrive</h3><p class="meta">Free · English</p><p>Microsoft’s native cloud storage service.</p><button class="download-btn" onclick="downloadApp('OneDrive', false)">Download</button></div>
+
+    <!-- Miscellaneous & Specialty Tools -->
+    <div class="category"><h2>Miscellaneous & Specialty Tools</h2></div>
+    <div class="app"><h3>Ditto</h3><p class="meta">Free · English</p><p>Advanced clipboard manager for storing copied content.</p><button class="download-btn" onclick="downloadApp('Ditto', false)">Download</button></div>
+    <div class="app"><h3>AutoHotkey</h3><p class="meta">Free · English</p><p>Scripting language for automating Windows tasks.</p><button class="download-btn" onclick="downloadApp('AutoHotkey', false)">Download</button></div>
+    <div class="app"><h3>ShareMouse</h3><p class="meta">Free · English</p><p>Seamlessly control multiple computers with one mouse/keyboard.</p><button class="download-btn" onclick="downloadApp('ShareMouse', false)">Download</button></div>
+    <div class="app"><h3>f.lux</h3><p class="meta">Free · English</p><p>Automatically adjust screen color temperature for eye comfort.</p><button class="download-btn" onclick="downloadApp('f.lux', false)">Download</button></div>
+
+  </section>
+  <section id="plans" class="plans">
+    <h2>Premium Service Plans</h2>
+    <ul>
+      <li>$2 / month</li>
+      <li>$24 / year</li>
+      <li>$24500 / lifetime</li>
+    </ul>
+    <p>Premium gives you access to all apps and faster downloads!</p>
+  </section>
+  <section id="help" class="help">
+    <h2>Help</h2>
+    <p>If you need assistance, contact wafulaleonard979@gmail.com or call +254-702-858-964.</p>
+    <p>For all PC apps and software, join or login if you have an account to get premium services.</p>
+  </section>
+  <script>
+    let loggedIn = false;
+    let isPremium = false;
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if(user && pass) {
+        loggedIn = true;
+        alert('Logged in as ' + user);
+        checkSubscription();
+      } else {
+        alert('Enter username and password');
+      }
+    }
+    function signup() {
+      alert('Sign-up functionality will be implemented later.');
+    }
+    function checkSubscription() {
+      isPremium = confirm('Do you have premium subscription? Click OK if Yes.');
+    }
+    function downloadApp(appName, premiumOnly) {
+      if(!loggedIn) {
+        alert('Please login to download ' + appName);
+        return;
+      }
+      if(premiumOnly && !isPremium) {
+        alert('You need a premium subscription to download ' + appName);
+        return;
+      }
+      alert('Starting download for ' + appName);
+    }
+  </script>
 </body>
 </html>
